@@ -14,13 +14,13 @@ tile_size = 50
 
 
 #load images
-sun_img = pygame.image.load('img/sun.png')
-bg_img = pygame.image.load('img/sky.png')
+sun_img = pygame.image.load('sun.png')
+bg_img = pygame.image.load('sky.png')
 
 
 class Player():
 	def __init__(self, x, y):
-		img = pygame.image.load('img/guy1.png')
+		img = pygame.image.load('guy1.png')
 		self.image = pygame.transform.scale(img, (40, 80))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -72,8 +72,8 @@ class World():
 		self.tile_list = []
 
 		#load images
-		dirt_img = pygame.image.load('img/dirt.png')
-		grass_img = pygame.image.load('img/grass.png')
+		dirt_img = pygame.image.load('dirt.png')
+		grass_img = pygame.image.load('grass.png')
 
 		row_count = 0
 		for row in data:
