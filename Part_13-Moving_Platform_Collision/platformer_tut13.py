@@ -38,20 +38,20 @@ blue = (0, 0, 255)
 
 
 #load images
-sun_img = pygame.image.load('img/sun.png')
-bg_img = pygame.image.load('img/sky.png')
-restart_img = pygame.image.load('img/restart_btn.png')
-start_img = pygame.image.load('img/start_btn.png')
-exit_img = pygame.image.load('img/exit_btn.png')
+sun_img = pygame.image.load('sun.png')
+bg_img = pygame.image.load('sky.png')
+restart_img = pygame.image.load('restart_btn.png')
+start_img = pygame.image.load('start_btn.png')
+exit_img = pygame.image.load('exit_btn.png')
 
 #load sounds
-pygame.mixer.music.load('img/music.wav')
+pygame.mixer.music.load('music.wav')
 pygame.mixer.music.play(-1, 0.0, 5000)
-coin_fx = pygame.mixer.Sound('img/coin.wav')
+coin_fx = pygame.mixer.Sound('coin.wav')
 coin_fx.set_volume(0.5)
-jump_fx = pygame.mixer.Sound('img/jump.wav')
+jump_fx = pygame.mixer.Sound('jump.wav')
 jump_fx.set_volume(0.5)
-game_over_fx = pygame.mixer.Sound('img/game_over.wav')
+game_over_fx = pygame.mixer.Sound('game_over.wav')
 game_over_fx.set_volume(0.5)
 
 
@@ -242,12 +242,12 @@ class Player():
 		self.index = 0
 		self.counter = 0
 		for num in range(1, 5):
-			img_right = pygame.image.load(f'img/guy{num}.png')
+			img_right = pygame.image.load(f'guy{num}.png')
 			img_right = pygame.transform.scale(img_right, (40, 80))
 			img_left = pygame.transform.flip(img_right, True, False)
 			self.images_right.append(img_right)
 			self.images_left.append(img_left)
-		self.dead_image = pygame.image.load('img/ghost.png')
+		self.dead_image = pygame.image.load('ghost.png')
 		self.image = self.images_right[self.index]
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -266,8 +266,8 @@ class World():
 		self.tile_list = []
 
 		#load images
-		dirt_img = pygame.image.load('img/dirt.png')
-		grass_img = pygame.image.load('img/grass.png')
+		dirt_img = pygame.image.load('dirt.png')
+		grass_img = pygame.image.load('grass.png')
 
 		row_count = 0
 		for row in data:
@@ -318,7 +318,7 @@ class World():
 class Enemy(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load('img/blob.png')
+		self.image = pygame.image.load('blob.png')
 		self.rect = self.image.get_rect()
 		self.rect.x = x
 		self.rect.y = y
@@ -336,7 +336,7 @@ class Enemy(pygame.sprite.Sprite):
 class Platform(pygame.sprite.Sprite):
 	def __init__(self, x, y, move_x, move_y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('img/platform.png')
+		img = pygame.image.load('platform.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size // 2))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -362,7 +362,7 @@ class Platform(pygame.sprite.Sprite):
 class Lava(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('img/lava.png')
+		img = pygame.image.load('lava.png')
 		self.image = pygame.transform.scale(img, (tile_size, tile_size // 2))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
@@ -372,7 +372,7 @@ class Lava(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('img/coin.png')
+		img = pygame.image.load('coin.png')
 		self.image = pygame.transform.scale(img, (tile_size // 2, tile_size // 2))
 		self.rect = self.image.get_rect()
 		self.rect.center = (x, y)
@@ -381,7 +381,7 @@ class Coin(pygame.sprite.Sprite):
 class Exit(pygame.sprite.Sprite):
 	def __init__(self, x, y):
 		pygame.sprite.Sprite.__init__(self)
-		img = pygame.image.load('img/exit.png')
+		img = pygame.image.load('exit.png')
 		self.image = pygame.transform.scale(img, (tile_size, int(tile_size * 1.5)))
 		self.rect = self.image.get_rect()
 		self.rect.x = x
